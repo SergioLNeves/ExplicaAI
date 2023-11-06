@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 const pages = [
   { name: "Home", link: "/Home" },
   { name: "Biblioteca", link: "/Biblioteca" },
-  { name: "Faça sua pergunta", link: "/Pergunta" },
+  { name: "Perguntas", link: "/Pergunta" },
 ];
 
 function NavbarSimples() {
@@ -30,7 +30,7 @@ function NavbarSimples() {
     <AppBar
       className="p-5 bg-black"
       sx={{ backgroundColor: "black" }}
-      position="static"
+      position="fixed"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -66,7 +66,7 @@ function NavbarSimples() {
               textDecoration: "none",
             }}
           >
-            EXPLICA.<span className="text-violet-400">AI</span>
+            EXPLICA.<span className="text-violet-300">AI</span>
           </Typography>
           <Box  sx={{justifyContent:"flex-end", flexGrow: 90, display: { xs: "flex", md: "none" } }}>
             <IconButton
