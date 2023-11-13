@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/estaticos/footer/Footer";
 import Home from "./components/pages/home/HomeContents";
 import NavbarSimples from "./components/estaticos/navbar/Navbar";
+import Biblioteca from "./components/pages/biblioteca/BibliotecaContents";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Biblioteca" element={<Home />} />
+          <Route path="/Biblioteca" element={<Biblioteca />} />
           <Route path="/Perguntas" element={<Home />} />
         </Routes>
       </div>
