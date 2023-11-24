@@ -8,6 +8,9 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
+import { useLocation } from "react-router-dom";
+import CaixaDePergunta from "../../functions/forms/formsPergunta/CaixaDePergunta";
+
 
 const pages = [
   { name: "Home", link: "/Home" },
@@ -16,6 +19,11 @@ const pages = [
 ];
 
 function NavbarSimples() {
+
+const location = useLocation();
+
+const isPerguntasRoute = location.pathname === "/Perguntas";
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -50,7 +58,19 @@ function NavbarSimples() {
             EXPLICA.<span className="text-violet-400">AI</span>
           </Typography>
 
-          
+          {isPerguntasRoute && (
+            <Box
+              sx={{
+                justifyContent: "flex-end",
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              <CaixaDePergunta />
+            </Box>
+          )}
+
+
           <Typography
             variant="h5"
             noWrap
@@ -68,6 +88,20 @@ function NavbarSimples() {
           >
             EXPLICA.<span className="text-violet-300">AI</span>
           </Typography>
+          
+          {isPerguntasRoute && (
+            <Box
+            className="mx-[10%]"
+              sx={{
+                justifyContent: "flex-center",
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+              }}
+            >
+              <CaixaDePergunta />
+            </Box>
+          )}
+
           <Box  sx={{justifyContent:"flex-end", flexGrow: 90, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"

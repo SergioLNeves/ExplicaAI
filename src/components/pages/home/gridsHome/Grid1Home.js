@@ -1,5 +1,5 @@
 import React from "react";
-import CaixaDePergunta from "../../../functions/forms/CaixaDePergunta";
+import CaixaDePergunta from "../../../functions/forms/formsPergunta/CaixaDePergunta";
 
 function Grid1Home() {
 
