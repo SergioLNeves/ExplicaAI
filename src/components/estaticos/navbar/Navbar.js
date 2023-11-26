@@ -8,14 +8,20 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const pages = [
   { name: "Home", link: "/Home" },
   { name: "Biblioteca", link: "/Biblioteca" },
-  { name: "Perguntas", link: "/Pergunta" },
+  { name: "Perguntas", link: "/Perguntas" },
 ];
 
 function NavbarSimples() {
+
+const location = useLocation();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -25,6 +31,10 @@ function NavbarSimples() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  useEffect(() => {
+    clearCache();
+  }, [location.pathname]); 
 
   return (
     <AppBar
@@ -50,7 +60,7 @@ function NavbarSimples() {
             EXPLICA.<span className="text-violet-400">AI</span>
           </Typography>
 
-          
+
           <Typography
             variant="h5"
             noWrap
@@ -68,6 +78,9 @@ function NavbarSimples() {
           >
             EXPLICA.<span className="text-violet-300">AI</span>
           </Typography>
+          
+         
+
           <Box  sx={{justifyContent:"flex-end", flexGrow: 90, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -131,5 +144,9 @@ function NavbarSimples() {
       </Container>
     </AppBar>
   );
+  function clearCache() {
+    localStorage.clear();
+    console.log("Cache limpo com sucesso!");
+  }
 }
 export default NavbarSimples;

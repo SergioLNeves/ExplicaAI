@@ -4,6 +4,9 @@ import { Footer } from "./components/estaticos/footer/Footer";
 import Home from "./components/pages/home/HomeContents";
 import NavbarSimples from "./components/estaticos/navbar/Navbar";
 import Biblioteca from "./components/pages/biblioteca/BibliotecaContents";
+import Perguntas from "./components/pages/perguntas/PerguntaComponents";
+import DetalhesPergunta from './components/pages/perguntasDetalhes/PerguntasDetalhesComponents';
+
 
 
 function App() {
@@ -15,7 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Biblioteca" element={<Biblioteca />} />
-          <Route path="/Perguntas" element={<Home />} />
+          <Route path="/Perguntas" element={<Perguntas />} />
+          <Route path="/pergunta/:id" element={<DetalhesPergunta />} />
         </Routes>
       </div>
       <Footer />

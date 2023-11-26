@@ -23,6 +23,8 @@ export default function CaixaDePergunta() {
       handleSearchClick();
     }
   };
+
+  
   return (
     <Paper
       component="form"
@@ -39,7 +41,7 @@ export default function CaixaDePergunta() {
       />
       <IconButton
         type="button"
-        sx={{ p: "10px" }}
+        sx={{ p: "10px", backgroundColor: "black", color:"white"}}
         aria-label="search"
         onClick={handleSearchClick}
       >
